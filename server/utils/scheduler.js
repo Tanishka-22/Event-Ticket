@@ -3,7 +3,7 @@ const { scrapeEvents } = require('./scraper');
 const Event = require('../models/Event');
 
 const initScheduler = () => {
-  // Run every 6 hours
+ 
   cron.schedule('0 */6 * * *', async () => {
     try {
       console.log('Running scheduled scraping...');

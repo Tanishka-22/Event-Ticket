@@ -12,8 +12,7 @@ app.get('/', (req, res) => {
   res.send('API is running');
 });
 
-// Middleware
-// Update CORS configuration
+
 app.use(cors({
   origin: ['http://localhost:5173', 'https://sydney-events-ticket.vercel.app/'],// Vite's default port
   methods: ['GET', 'POST'],
@@ -22,17 +21,13 @@ app.use(cors({
 
 app.use(express.json());
 
-// Connect to MongoDB
 connectDB();
 
-// Initialize scheduler
 initScheduler();
 
-// Routes
 app.use('/api/events', eventRoutes);
 app.use('/api/users', userRoutes);
 
-// Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: 'Something went wrong!' });

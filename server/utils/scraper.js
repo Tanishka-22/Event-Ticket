@@ -9,13 +9,12 @@ const scrapeEvents = async () => {
     const { data } = await axios.get(url);
     const $ = cheerio.load(data);
 
-    // Find the <script type="application/ld+json"> that contains the event list
     let events = [];
     $('script[type="application/ld+json"]').each((i, el) => {
       try {
         const json = JSON.parse($(el).contents().text());
         if (json['@type'] === 'ItemList' && Array.isArray(json.itemListElement)) {
-          // Extract event info from each ListItem
+       
           events = json.itemListElement.map(item => {
             const ev = item.item;
             return {
@@ -35,7 +34,7 @@ const scrapeEvents = async () => {
           });
         }
       } catch (e) {
-        // Ignore JSON parse errors for unrelated scripts
+        
       }
     });
 

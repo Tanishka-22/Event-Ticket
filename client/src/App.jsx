@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     fetchEvents();
-  }, []); // Add this useEffect hook to fetch events when component mounts
+  }, []); 
 
   const fetchEvents = async () => {
     try {

@@ -110,7 +110,7 @@ const Header = ({ onSearch }) => {
         </Box>
       </Container>
 
-      {/* Help Center Dialog */}
+     
       <Dialog open={helpOpen} onClose={handleHelpClose}>
         <DialogTitle>Help Center</DialogTitle>
         <DialogContent>
