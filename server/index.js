@@ -15,10 +15,12 @@ app.get('/', (req, res) => {
 // Middleware
 // Update CORS configuration
 app.use(cors({
-  origin: 'http://localhost:5173', // Vite's default port
+  origin: 'https://sydney-events-ticket.vercel.app/', // Vite's default port
   methods: ['GET', 'POST'],
   credentials: true
 }));
+const cors = require('cors');
+
 app.use(express.json());
 
 // Connect to MongoDB
