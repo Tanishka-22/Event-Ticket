@@ -14,7 +14,10 @@ app.get('/', (req, res) => {
 
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://sydney-events-ticket.vercel.app/'],// Vite's default port
+  origin: [
+    'http://localhost:5173',
+    'https://sydney-events-ticket.vercel.app'
+  ],
   methods: ['GET', 'POST'],
   credentials: true
 }));

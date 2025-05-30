@@ -17,7 +17,7 @@ const theme = createTheme({
   },
 });
 
-const API_URL = 'https://event-ticket-1.onrender.com/';
+const API_URL = 'https://event-ticket-1.onrender.com';
 
 function App() {
   const [events, setEvents] = useState([]);
