@@ -19,7 +19,6 @@ app.use(cors({
   methods: ['GET', 'POST'],
   credentials: true
 }));
-const cors = require('cors');
 
 app.use(express.json());
 
